@@ -9,8 +9,12 @@
 #
 # Create a dictionary with `dd = {}`. Assign values with `dd["foo"] = 1`.
 # Check to see if a dictionary has a key using the `in` operator.
-#
-#
+# dd = {}
+# dd["foo"] = 1
+# dd["foo"] += 1
+# if "foo" in dd:
+#     print(dd["foo"])
+
 # Careful. Python requires that you insert a key into a dictionary
 # before you try to modify it's value. If you try to access a dictionary
 # at a key that hasn't been added you'll get an error and the program will
@@ -26,3 +30,13 @@
 # letter_count('banana')
 #
 # > {'a': 3, 'b': 1, 'n': 2}
+
+def letter_count(string):
+    di = {}
+    for letter in string:
+        if letter in di:
+            di[letter] += 1
+        else:
+            di[letter] = 1
+    print(di)
+letter_count("banana")
